@@ -1,0 +1,107 @@
+// Bootstrap
+@import 'bootstrap-variables';
+@import 'bootstrap/bootstrap-grid';
+@import 'variables';
+@import 'bootstrap/mixins';
+@import "bootstrap/utilities/text";
+
+// Libraries
+@import 'libraries/hamburgers/hamburgers';
+
+// Components
+@import 'components/reset';
+@import 'components/type';
+@import 'components/page';
+@import 'components/header';
+@import 'components/footer';
+@import 'components/sub-footer';
+@import 'components/logo';
+@import 'components/main-menu';
+@import 'components/main-menu-mobile';
+@import 'components/hamburger';
+@import 'components/buttons';
+@import 'components/call';
+@import 'components/title';
+@import 'components/content';
+@import 'components/intro';
+@import 'components/intro-image';
+@import 'components/strip';
+@import 'components/whitebox';
+@import 'components/feature';
+
+// Pages
+@import 'pages/home';
+@import 'pages/team/team-summary';
+@import 'pages/services/page-services-single';
+
+body {
+  font-size: 16px;
+  line-height: 1.1;
+  font-family: $font-family-base;
+  @include media-breakpoint-up(md) {
+    font-size: 17px;
+    line-height: 1.2;
+  }
+}
+
+.text-gray-mqube {
+  color: #f1f4f8!important;
+}
+
+.display-3 {
+  line-height: 1.2;
+}
+.display-1, .display-2, .display-3, .display-4 {
+  letter-spacing: -.02em;
+}
+
+.bg-gray-200 {
+  background-color: #f1f4f8 !important;
+}
+
+.text-gray-700 {
+  color: #506690 !important;
+}
+
+.last-section {
+  padding-bottom: 30px;
+}
+
+.footer {
+  padding-top: 10px;
+}
+
+.mt-n8, .my-n8 {
+  margin-top: -3rem!important;
+}
+.position-relative {
+  position: relative!important;
+}
+
+#contents {
+  padding-top: 20px;
+}
+
+
+// Display breakpoints for DEV
+{{ if .Site.IsServer }}
+body:after {
+  color: #000000;
+  font-size: 12px;
+  padding: 5px;
+  font-weight: bold;
+  right: 10px;
+  position: fixed;
+  text-align: center;
+  text-transform: uppercase;
+  bottom: 10px;
+  width: 200px;
+  z-index: 9999;
+  border: solid 1px #000000;
+  @each $name, $value in $grid-breakpoints {
+    @include media-breakpoint-up($name) {
+      content: '#{$name} - min-width: #{$value}';
+    }
+  }
+}
+{{ end }}
