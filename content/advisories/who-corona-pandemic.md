@@ -3,7 +3,7 @@ title: "WHO declared Corona as a pandemic"
 date: 2020-03-12T12:33:46+10:00
 draft: false
 featured: true
-weight: 3
+weight: 12
 ---
 
 World health organization declared COVID-19 as a pandemic. This will impact travels across the world.
